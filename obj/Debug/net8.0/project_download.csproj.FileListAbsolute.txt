@@ -62,3 +62,4 @@
 /Users/lev/Projects/Asp/project_download/obj/Debug/net8.0/project_download.csproj.AssemblyReference.cache
 /Users/lev/Projects/Asp/project_download/obj/Debug/net8.0/project_.75AE6027.Up2Date
 /Users/lev/Projects/Asp/project_download/bin/Debug/net8.0/fileData.json
+/Users/lev/Projects/Asp/project_download/obj/Debug/net8.0/project_download.sourcelink.json
