@@ -10,16 +10,19 @@
             {
                 foreach (var file in Model)
                 {
-                    <div class="download-item">
-                        <h4>@file.Name</h4>
-                        <p>Size: @file.Length</p>
+                    if (@file.Name != ".DS_Store")
+                    {
+                        <div class="download-item">
+                            <h4>@file.Name</h4>
+                            <p>Size: @file.Length</p>
 
-                        <form action="/FileUpload/DownloadFile" method="get">
-                            <input type="text" name="fileName" value="@file.Name">
-                            <input type="submit" id="@file.Name" hidden>
-                            <label for="@file.Name"><a class="download-link">Download</a></label>
-                        </form>
-                    </div>
+                            <form action="/FileUpload/DownloadFile" method="get">
+                                <input type="text" name="fileName" value="@file.Name">
+                                <input type="submit" id="@file.Name" hidden>
+                                <label for="@file.Name"><a class="download-link">Download</a></label>
+                            </form>
+                        </div>
+                    }
                 }
             }
         </div>
