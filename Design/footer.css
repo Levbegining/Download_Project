@@ -1,0 +1,25 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+div {
+    border: 5px solid black;
+}
+
+.page{
+    display: flex;
+    flex-direction: column;
+    height: 100%
+}
+.menu {
+    background-color: red;
+}
+.content {
+    background-color: blue;
+    flex: 1; /* заполнение пространства, которое осталось */
+}
+.footer {
+    background-color: green;
+    /* margin-top: auto; */
+}

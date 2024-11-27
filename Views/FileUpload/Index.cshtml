@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+    <div class="header">
+        <h1>Загрузчик файлов</h1>
+        <p>Твое будущее начинается здесь</p>
+    </div>
+    <div class="main">
+        <div class="upload-section">
+            <form class="upload-form" method="post" enctype="multipart/form-data" action="/FileUpload/Upload">
+                <div class="file-dropzone">
+                    <p>Схватите и перенесите сюда ваш файл или</p>
+                    <input type="file" class="file-input" id="fileInput" name="file"/>
+                    <label for="fileInput" class="upload-label">Выбрать файл</label>
+                </div>
+
+                <input name="password">
+
+                <button type="submit" class="upload-button">загрузить</button>
+            </form>
+        </div>
+    </div>
+    </div>
+    <div class="footer">
+        <p>&copy; загрузчик файлов | levshapovaov2010@gmail.com</p>
+    </div>
+</body>
+</html>
