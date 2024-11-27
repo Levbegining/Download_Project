@@ -52,32 +52,47 @@ public class FileUploadController : Controller
 
         // работа с паролем
         string passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
-        FileRepository.Files.Add(new Models.FileData(){
-            FileName=file.FileName,
+        // FileRepository.Files.Add(new Models.FileData()
+        // {
+        //     FileName = file.FileName,
+        //     PasswordHash = passwordHash
+        // });
+        FileDataManager.AddFile(new Models.FileData()
+        {
+            FileName = file.FileName,
             PasswordHash = passwordHash
         });
 
-        return Content($"file <{file.FileName}> has downloaded! {passwordHash}");
+        // return Content($"file <{file.FileName}> has downloaded! {passwordHash}");
+        return RedirectToAction("Downloads");
     }
 
     [HttpPost]
     public IActionResult DownloadFile(string fileName, string password)
     {
+        // достаем dileData по имени файла
+        // var fileData = FileRepository.Files.FirstOrDefault(x => x.FileName == fileName);
+        var fileData = FileDataManager.GetFile(fileName);
+
         var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "UploadedFiles");
         var filePath = Path.Combine(uploadsFolder, fileName);
 
-        if (!System.IO.File.Exists(filePath))
+        if (fileData == null)
         {
             return Content("Файл не найден");
         }
-        else
-        {
-            byte[] bytes = System.IO.File.ReadAllBytes(filePath);
-            return File(bytes, "application/octet-stream", fileName);
-        }
-    }
-    public IActionResult DownLoadFile(string fileName){
 
+        // check password
+        if (BCrypt.Net.BCrypt.Verify(password, fileData.PasswordHash) == false)
+        {
+            return Content("Неверный пароль");
+        }
+
+        byte[] bytes = System.IO.File.ReadAllBytes(filePath);
+        return File(bytes, "application/octet-stream", fileName);
+    }
+    public IActionResult DownLoadFile(string fileName)
+    {
         // ViewName(ViewName, object)
         return View("DownLoadFile", fileName);
     }
@@ -85,12 +100,14 @@ public class FileUploadController : Controller
     {
         var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "UploadedFiles");
 
-        if(!Directory.Exists(uploadsFolder)){
+        if (!Directory.Exists(uploadsFolder))
+        {
             return Content("Error. Directory not found. Directory doesn't exists");
         }
         var files = Directory.GetFiles(uploadsFolder).
         Select(file => new FileInfo(file)).
-        Select(file => new{
+        Select(file => new
+        {
             Name = file.Name,
             Length = $"{(file.Length / 1024f / 1024f):F2} Мб"
         }).ToList();

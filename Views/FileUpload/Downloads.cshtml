@@ -15,9 +15,9 @@
                         <p>Size: @file.Length</p>
 
                         <form action="/FileUpload/DownloadFile" method="get">
-                            <input type="text" name="fileName" value="@file.Name" hidden>
-                            <input type="submit" id="button-submit" hidden>
-                            <label for="button-submit"><a class="download-link">Download</a></label>
+                            <input type="text" name="fileName" value="@file.Name">
+                            <input type="submit" id="@file.Name" hidden>
+                            <label for="@file.Name"><a class="download-link">Download</a></label>
                         </form>
                     </div>
                 }
