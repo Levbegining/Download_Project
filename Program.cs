@@ -1,5 +1,6 @@
 var builder = WebApplication.CreateBuilder(args);
-
+// Настройка URL, на котором приложение будет слушать (все интерфейсы, порт 5000)
+builder.WebHost.UseUrls("http://0.0.0.0:5001");// LINUX SERVER FOR!!!
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
