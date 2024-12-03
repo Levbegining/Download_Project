@@ -39,7 +39,7 @@ public static class FileDataManager
         var json = JsonSerializer.Serialize(files, new JsonSerializerOptions()
         {
                 Encoder = JavaScriptEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Cyrillic),
-            WriteIndented = true
+                WriteIndented = true
         });
         File.WriteAllText(filePath, json);
     }

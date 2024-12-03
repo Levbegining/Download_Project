@@ -1,10 +1,36 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="_Layout.cshtml.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Asp_Services_Homework.styles.css" asp-append-version="true" />
 </head>
+
 <body>
+    <div class="header-global">
+        <div class="navbar-my">
+            <ul class="row">
+                <li class="specific-li">
+                    <a class="beauty-a" asp-area="class=" asp-controller="FileUpload" asp-action="Index">Сохранить
+                        файл</a>
+                </li>
+                <li class="specific-li">
+                    <a class="beauty-a" asp-area="class="  asp-controller="FileUpload" asp-action="Downloads">Скачать
+                        файл</a>
+                </li>
+            </ul>
+        </div>
+        <div class="header">
+            <h1>Загрузчик файлов</h1>
+            <p>Твое будущее начинается здесь</p>
+        </div>
+    </div>
     @RenderBody()
+    <div class="footer">
+        <p>&copy; загрузчик файлов | levshapovalov2010@gmail.com</p>
+    </div>
 </body>
+
 </html>

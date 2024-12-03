@@ -1,8 +1,14 @@
 ﻿@model string
-<h2>Введите пароль для скачивания файла "@Model"</h2>
 
-<form action="/FileUpload/DownLoadFile" method="post">
-    <input type="text" name="fileName" value="@Model" hidden>
-    <input type="text" name="password">
-    <input type="submit" value="Скачать">
-</form>
+<div class="wrapper">
+    <div class="main-password-download-file">
+        <h2>Введите пароль для скачивания файла "@Model":</h2>
+        <form action="/FileUpload/DownLoadFile" method="post">
+            <input type="text" name="fileName" value="@Model" hidden>
+            <div class="textbox-and-download-DownloadFile">
+                <input type="text" name="password">
+                <input class="download-button-small" type="submit" value="Скачать">
+            </div>
+        </form>
+    </div>
+</div>
