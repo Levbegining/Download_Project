@@ -6,30 +6,24 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="header">
-            <h1>Загрузчик файлов</h1>
-            <p>Твое будущее начинается здесь</p>
-        </div>
-        <div class="main">
-            <div class="upload-section">
-                <form class="upload-form" method="post" enctype="multipart/form-data" action="/FileUpload/Upload">
-                    <div class="file-dropzone">
-                        <p>Схватите и перенесите сюда ваш файл или</p>
-                        <input type="file" class="file-input" id="fileInput" name="file" />
-                        <label for="fileInput" class="upload-label">Выбрать файл</label>
-                    </div>
-                    <div class="button-and-textbox">
-                    <div class="textbox-password">
-                        <p>Введите пароль для дальнейшей загрузки этого файла:</p>
-                        <input class="textbox-enter-password" name="password">
-                    </div>
-    
-                    <button type="submit" class="upload-button"><p>загрузить</p></button>
-                    </div>
-                </form>
+        <div class="header-global">
+            <div class="navbar-my">
+                <ul class="row">
+                    <li class="specific-li">
+                        <a class="beauty-a" asp-area="class=" asp-controller="FileUpload" asp-action="Index">Сохранить
+                            файл</a>
+                    </li>
+                    <li class="specific-li">
+                        <a class="beauty-a" asp-area="class" 
+                        asp-controller="FileUpload" asp-action="Downloads">Скачать/Удалить
+                            файл</a>
+                    </li>
+                </ul>
             </div>
-        </div>
-    </div>
+            <div class="header">
+                <h1>Загрузчик файлов</h1>
+                <p>Твое будущее начинается здесь</p>
+            </div>
     <div class="footer">
         <p>&copy; загрузчик файлов | levshapovaov2010@gmail.com</p>
     </div>

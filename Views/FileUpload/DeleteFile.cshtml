@@ -1,0 +1,14 @@
+﻿@model string
+
+<div class="wrapper">
+    <div class="main-password-download-file">
+        <h2>Введите пароль для удаления файла "@Model":</h2>
+        <form action="/FileUpload/DeleteFile" method="post">
+            <input type="text" name="fileName" value="@Model" hidden>
+            <div class="textbox-and-download-DownloadFile">
+                <input type="text" name="password">
+                <input class="download-button-small" type="submit" value="Удалить">
+            </div>
+        </form>
+    </div>
+</div>

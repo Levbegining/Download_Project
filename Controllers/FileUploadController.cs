@@ -10,20 +10,31 @@ public class FileUploadController : Controller
     {
         return View();
     }
-    public IActionResult DeleteFile(string fileName)
+    [HttpPost]
+    public IActionResult DeleteFile(string fileName, string password)
     {
         var filePath = Path.Combine(Directory.GetCurrentDirectory(), "UploadedFiles", fileName);
+        var file = FileDataManager.GetFile(fileName);
+        if(BCrypt.Net.BCrypt.Verify(password, file.PasswordHash))
+        {
+            return RedirectToAction("DeleteFile");
+        } 
 
         if (System.IO.File.Exists(filePath))
         {
             System.IO.File.Delete(filePath);
-            return Content($"file <{fileName}> has deleted.");
+            //return Content($"file <{fileName}> has deleted.");
+            return RedirectToAction("Downloads");
         }
         else
         {
-            return Content($"IMPORTANT:\nfile <{fileName}> hasn't deleted.");
+            return RedirectToAction("DeleteFile");
+            //return Content($"IMPORTANT:\nfile <{fileName}> hasn't deleted.");
         }
-
+    }
+    [HttpGet]
+    public IActionResult DeleteFile(string fileName){
+        return View("DeleteFile", fileName);
     }
     public IActionResult Upload(IFormFile file, string password)
     {

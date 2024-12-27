@@ -15,7 +15,12 @@
                             <form action="/FileUpload/DownloadFile" method="get">
                                 <input type="text" name="fileName" value="@file.Name" hidden>
                                 <input type="submit" id="@file.Name" hidden>
-                                <label for="@file.Name"><a class="download-link">Download</a></label>
+                                <label for="@file.Name"><a class="download-link">Скачать</a></label>
+                            </form>
+                            <form action="/FileUpload/DeleteFile" method="get">
+                                <input type="text" name="fileName" value="@file.Name" hidden>
+                                <input type="submit" id="@file.Name d" hidden>
+                                <label for="@file.Name d"><a class="download-link">Удалить</a></label>
                             </form>
                         </div>
                     }

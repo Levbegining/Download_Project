@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/lev/Projects/Asp/project_download
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/lev/Projects/Asp/project_download/Views/FileUpload/DeleteFile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmlsZVVwbG9hZC9EZWxldGVGaWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/lev/Projects/Asp/project_download/Views/FileUpload/DownLoadFile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmlsZVVwbG9hZC9Eb3duTG9hZEZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

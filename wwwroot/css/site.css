@@ -238,12 +238,12 @@ body {
 }
 
 .beauty-a {
-  color: blue;
+  
   border-radius: 5px;
   padding: 30px;
-  background-color: #506371;
+  background-color: #84c2ef;
 
   margin: 1px 10px 1px 1px;
-  color: wheat;
+  color: rgb(245, 209, 143);
   text-decoration: none;
 }
